@@ -5,7 +5,7 @@ The microservices are designed to be independent of each other and can be deploy
 
 By [@nikosanif](https://x.com/nikosanif)
 
-[![license](https://img.shields.io/github/license/nikosanif/angular-authentication.svg)](https://github.com/nikosanif/angular-authentication/blob/main/LICENSE)
+[![license](https://img.shields.io/github/license/nikosanif/nestjs-microservices.svg)](https://github.com/nikosanif/nestjs-microservices/blob/main/LICENSE)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![X Follow](https://img.shields.io/twitter/follow/nikosanif.svg?style=social&label=Follow)](https://x.com/nikosanif)
 
@@ -144,3 +144,26 @@ The following graph shows the dependencies between the packages in the monorepo.
 - `npm run format:write` - Format the code
 - `npm run lint` - Lint the code
 - `npm run lint:affected` - Lint the affected code
+
+## Contributing
+
+Who is for this? I would love for you to contribute to NestJS Microservices! You can contribute in many ways, such as creating new features, fixing bugs, improving documentation, or suggesting new ideas.
+
+If you have found any bug in the source code or want to _request_ a new feature, you can help by [submitting an issue](https://github.com/nikosanif/nestjs-microservices/issues/new/choose) at GitHub. Even better, you can fork this repository and [submit a PR](https://github.com/nikosanif/nestjs-microservices/compare) with the fix or the new feature description.
+
+## Support
+
+- Star this repository 👆⭐️
+- Also, if you are an Angular developer, check out my other repository: [Angular Authentication 🛡️](https://github.com/nikosanif/angular-authentication)
+
+### Author: Nikos Anifantis ✍️
+
+- Fullstack Software Engineer - I’m currently working on Angular & Node.js application development.
+- I write stuff at [dev.to/nikosanif](https://dev.to/nikosanif) and [nikosanif.medium.com](https://nikosanif.medium.com/)
+- How to reach me: [![X](https://img.shields.io/twitter/url/https/x.com/nikosanif.svg?style=social&label=Follow%20nikosanif)](https://x.com/nikosanif) or [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=social&style=flat&logo=linkedin&labelColor=blue&label=Connect%20Nikos%20Anifantis)](https://www.linkedin.com/in/nikosanifantis/)
+
+## License
+
+Feel free to use this repository, but **please star and put a reference to this repository.** :pray: :heart:
+
+[MIT](https://opensource.org/licenses/MIT)
