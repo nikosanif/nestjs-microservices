@@ -1,0 +1,9 @@
+{
+  "name": "@nmsvc/microservices",
+  "version": "0.0.1",
+  "dependencies": {
+    "@nestjs/microservices": "^10.3.3",
+    "rxjs": "^7.8.0",
+    "tslib": "^2.3.0"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "plugins": ["eslint-plugin-import", "unused-imports"],
+      "rules": {
+        "import/order": [
+          "error",
+          {
+            "alphabetize": {
+              "order": "asc"
+            },
+            "pathGroups": [
+              {
+                "pattern": "@nmsvc/**",
+                "group": "internal",
+                "position": "before"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["internal"],
+            "groups": [["builtin", "external"], "internal", "type", "parent"],
+            "newlines-between": "always"
+          }
+        ],
+        "import/first": ["error"],
+        "import/no-duplicates": ["error"],
+
+        "unused-imports/no-unused-imports": "error",
+        "@typescript-eslint/no-unused-vars": "off",
+        "unused-imports/no-unused-vars": [
+          "error",
+          {
+            "vars": "all",
+            "args": "after-used"
+          }
+        ]
+      }
+    }
+  ]
+}

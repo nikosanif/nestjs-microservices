@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "extends": [
+    "./tools/eslint/json.json",
+    "./tools/eslint/javascript.json",
+    "./tools/eslint/typescript.json",
+    "./tools/eslint/tests.json",
+    "./tools/eslint/naming-convention.json",
+    "./tools/eslint/import-order.json",
+    "./tools/eslint/boundaries.json"
+  ]
+}

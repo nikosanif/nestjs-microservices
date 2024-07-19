@@ -1,0 +1,26 @@
+{
+  "name": "sdk",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sdk",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/sdk",
+        "tsConfig": "libs/sdk/tsconfig.lib.json",
+        "packageJson": "libs/sdk/package.json",
+        "main": "libs/sdk/index.ts",
+        "assets": ["libs/sdk/*.md"],
+        "additionalEntryPoints": ["libs/sdk/*/index.ts"],
+        "generateExportsField": true
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs sdk {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": ["type:sdk"]
+}

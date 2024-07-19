@@ -1,0 +1,39 @@
+{
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "plugins": ["@nx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "type:sdk",
+                "onlyDependOnLibsWithTags": ["type:sdk"]
+              },
+              {
+                "sourceTag": "type:microservices",
+                "onlyDependOnLibsWithTags": ["type:cdk"]
+              },
+              {
+                "sourceTag": "type:utils",
+                "onlyDependOnLibsWithTags": ["type:utils", "type:microservices", "type:sdk"]
+              },
+              {
+                "sourceTag": "type:module",
+                "onlyDependOnLibsWithTags": ["type:utils", "type:microservices", "type:sdk"]
+              },
+              {
+                "sourceTag": "type:app",
+                "onlyDependOnLibsWithTags": ["type:utils", "type:module", "type:sdk"]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nmsvc/modules/auth": ["libs/modules/auth/src/index.ts"],
+      "@nmsvc/modules/files": ["libs/modules/files/src/index.ts"],
+      "@nmsvc/modules/users": ["libs/modules/users/src/index.ts"],
+      "@nmsvc/shared/config": ["libs/shared/config/src/index.ts"],
+      "@nmsvc/shared/utils": ["libs/shared/utils/src/index.ts"],
+      "@nmsvc/microservices": ["libs/microservices/index.ts"],
+      "@nmsvc/microservices/grpc": ["libs/microservices/grpc/index.ts"],
+      "@nmsvc/sdk": ["libs/sdk/index.ts"],
+      "@nmsvc/sdk/api": ["libs/sdk/api/index.ts"],
+      "@nmsvc/sdk/common": ["libs/sdk/common/index.ts"],
+      "@nmsvc/sdk/db": ["libs/sdk/db/index.ts"],
+      "@nmsvc/sdk/ddd": ["libs/sdk/ddd/index.ts"],
+      "@nmsvc/sdk/exceptions": ["libs/sdk/exceptions/index.ts"],
+      "@nmsvc/sdk/types": ["libs/sdk/types/index.ts"],
+      "@nmsvc/sdk/utils": ["libs/sdk/utils/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

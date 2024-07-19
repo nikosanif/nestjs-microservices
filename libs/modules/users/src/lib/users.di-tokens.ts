@@ -1,0 +1,8 @@
+// Tokens used for Dependency Injection
+
+export const USER_REPOSITORY = Symbol('USER_REPOSITORY');
+export const ROLE_REPOSITORY = Symbol('ROLE_REPOSITORY');
+export const USER_CREDENTIALS_REPOSITORY = Symbol('USER_CREDENTIALS_REPOSITORY');
+
+export const USERS_DB_CONNECTION_NAME = 'USERS_DB_CONNECTION_NAME';
+export const USERS_CONFIG_TOKEN = 'USERS_CONFIG_TOKEN';

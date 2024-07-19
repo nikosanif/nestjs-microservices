@@ -1,0 +1,13 @@
+# Add files here to ignore them from prettier formatting
+
+# Default
+/dist
+/coverage
+/tmp
+
+######### Custom #########
+
+# Plugins
+/.nx/cache
+/.nx/workspace-data
+.eslintcache

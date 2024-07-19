@@ -1,0 +1,39 @@
+{
+  "name": "microservices",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/microservices",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/microservices",
+        "tsConfig": "libs/microservices/tsconfig.lib.json",
+        "packageJson": "libs/microservices/package.json",
+        "main": "libs/microservices/index.ts",
+        "assets": ["libs/microservices/*.md", "libs/microservices/**/*.proto"],
+        "additionalEntryPoints": ["libs/microservices/*/index.ts"],
+        "generateExportsField": true
+      },
+      "dependsOn": ["build-protobuf"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs microservices {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "build-protobuf": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/microservices/grpc",
+        "commands": [
+          "protoc --ts_proto_out=. ./**/*.proto  --ts_proto_opt=exportCommonSymbols=false --ts_proto_opt=nestJs=true",
+          "prettier --write ."
+        ],
+        "parallel": false
+      },
+      "cache": true
+    }
+  },
+  "tags": ["type:microservices"]
+}

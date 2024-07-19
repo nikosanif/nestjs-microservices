@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package users;
+
+service UsersGrpcService {
+  rpc FindById (UserById) returns (User) {}
+  rpc FindOneByUsernameAndPassword (UserByUsernameAndPassword) returns (User) {}
+  rpc FindSystemUser (EmptyUser) returns (User) {}
+}
+
+message EmptyUser {}
+
+message UserById {
+  string id = 1;
+}
+
+message UserByUsernameAndPassword {
+  string username = 1;
+  string password = 2;
+}
+
+message User {
+  string id = 1;
+  string username = 2;
+  string email = 3;
+  string firstName = 4;
+  string lastName = 5;
+}

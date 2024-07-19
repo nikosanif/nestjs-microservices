@@ -1,0 +1,18 @@
+{
+  "editor.tabSize": 2,
+  "editor.rulers": [100],
+  "editor.formatOnSave": true,
+  "typescript.preferences.quoteStyle": "single",
+  "eslint.validate": ["json"],
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*, .dockerignore",
+    "dockerfile": ".dockerignore, docker-compose.yml, dockerfile*",
+    "package.json": ".browserslist*, .codecov, .commitlint*, .editorconfig, .eslint*, .github*, .huskyrc*, .jslint*, .lintstagedrc*, .node-version, .npm*, .nvmrc, .prettier*, prettier*, .releaserc*, .vscode*, commitlint*, cypress.json, jest.*, jsconfig.*, lint-staged*, nest-cli.*, package-lock.json, stylelint*, tsdoc.*, tslint*, webpack.config.*, workspace.json, yarn*",
+    "tsconfig.base.*": "tsconfig.*",
+    "readme.*": "authors, backers.md, changelog*, citation*, code_of_conduct.md, codeowners, contributing.md, contributors, copying, credits, governance.md, history.md, license*, maintainers, readme*, security.md, sponsors.md",
+    "project.json": "tsconfig.*, jest.*, .eslint*, .babel*",
+    "index.ts": "test-setup.ts"
+  }
+}

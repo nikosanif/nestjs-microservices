@@ -1,0 +1,12 @@
+// Tokens used for Dependency Injection
+export const OAUTH_CLIENT_REPOSITORY = Symbol('OAUTH_CLIENT_REPOSITORY');
+export const OAUTH_TOKEN_REPOSITORY = Symbol('OAUTH_TOKEN_REPOSITORY');
+export const OAUTH_USER_REPOSITORY = Symbol('OAUTH_USER_REPOSITORY');
+
+export const OAUTH_FLOW_MODEL = Symbol('OAUTH_FLOW_MODEL');
+export const OAUTH_SERVER = Symbol('OAUTH_SERVER');
+
+export const AUTH_DB_CONNECTION_NAME = 'AUTH_DB_CONNECTION_NAME';
+export const AUTH_CONFIG_TOKEN = 'AUTH_CONFIG_TOKEN';
+
+export const USERS_GRPC_SERVICE = Symbol('USERS_GRPC_SERVICE');
