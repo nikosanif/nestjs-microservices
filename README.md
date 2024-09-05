@@ -70,6 +70,14 @@ By [@nikosanif](https://x.com/nikosanif)
    npx nx run wolverine:serve
    ```
 
+5. [Optional] Setup projects for development:
+
+   ```sh
+   # Setup the projects for development
+   # For example: seed databases
+   npm run setup:dev
+   ```
+
 ## Structure overview
 
 The project is structured as a monorepo. Each microservice is a separate package within the monorepo. The monorepo is managed using [nx](https://nx.dev/).

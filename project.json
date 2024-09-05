@@ -9,6 +9,16 @@
         "config": "./tools/.verdaccio/config.yml",
         "storage": "tmp/local-registry/storage"
       }
+    },
+    "seed": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "ENVIRONMENT=development node ./dist/apps/cyclops/cli.js roles seed",
+          "ENVIRONMENT=development node ./dist/apps/wolverine/cli.js oauth-clients create -n development -ci 1234 -g password"
+        ],
+        "parallel": false
+      }
     }
   }
 }

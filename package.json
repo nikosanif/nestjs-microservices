@@ -7,12 +7,15 @@
     "npm": "^10.7.0"
   },
   "scripts": {
-    "prepare": "husky",
+    "build:all": "nx run-many --target=build",
+    "format:check": "prettier --check .",
+    "format:check:ci": "prettier --check --cache .",
+    "format:write": "prettier --write .",
     "lint": "nx run-many --target=lint",
     "lint:affected": "nx affected --target=lint",
-    "format:write": "prettier --write .",
-    "format:check": "prettier --check .",
-    "format:check:ci": "prettier --check --cache ."
+    "prepare": "husky",
+    "setup:dev": "npm run build:all && nx run seed",
+    "setup:dev:seed": "nx run seed"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.11.1",
