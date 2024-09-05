@@ -10,7 +10,7 @@ export class ApiRouter {
   static auth = {
     title: 'Auth',
     root: 'auth',
-    login: 'login',
+    issueToken: 'token',
     logout: 'logout',
   };
 

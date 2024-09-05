@@ -12,7 +12,7 @@ import { OAuthFacade } from '../application';
 export class AuthHttpController {
   constructor(private readonly oauthFacade: OAuthFacade) {}
 
-  @ApiOperation({ summary: 'OAuth2 login via several grant types' })
+  @ApiOperation({ summary: 'OAuth2 issue new token via several grant types' })
   @ApiResponse({
     status: HttpStatus.OK,
     description: 'OAuth2 token response',
@@ -21,9 +21,9 @@ export class AuthHttpController {
   @ApiResponse({ status: HttpStatus.UNAUTHORIZED, description: 'Invalid credentials' })
   @ApiResponse({ status: HttpStatus.FORBIDDEN, description: 'Invalid scopes' })
   @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Invalid request' })
-  @Post(ApiRouter.auth.login)
-  async login(@Req() req: ExpressReq): Promise<any> {
-    return this.oauthFacade.login(req);
+  @Post(ApiRouter.auth.issueToken)
+  async issueToken(@Req() req: ExpressReq): Promise<any> {
+    return this.oauthFacade.issueToken(req);
   }
 
   @ApiOperation({ summary: 'Logout an authenticated client' })

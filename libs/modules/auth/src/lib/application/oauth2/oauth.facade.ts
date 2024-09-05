@@ -12,7 +12,7 @@ export class OAuthFacade {
     private readonly authServer: OAuthServer
   ) {}
 
-  async login(req: ExpressReq) {
+  async issueToken(req: ExpressReq) {
     return this.authServer.issueToken(req);
   }
 
