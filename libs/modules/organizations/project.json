@@ -1,0 +1,9 @@
+{
+  "name": "organizations",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/modules/organizations/src",
+  "projectType": "library",
+  "tags": ["type:module"],
+  "// targets": "to see all targets run: nx show project organizations --web",
+  "targets": {}
+}
