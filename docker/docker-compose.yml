@@ -40,20 +40,6 @@ services:
       - database-adminer-volume:/var/lib/pgadmin
     <<: *shared-network
 
-  minio:
-    image: minio/minio:${MINIO_VERSION}
-    container_name: nmsvc-minio
-    command: server --console-address ":9001" /data
-    environment:
-      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
-      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
-    ports:
-      - ${MINIO_PORT}:9000
-      - ${MINIO_UI_PORT}:9001
-    volumes:
-      - minio-volume:/data
-    <<: *shared-network
-
 networks:
   nmsvc-network:
     driver: bridge
@@ -66,5 +52,3 @@ volumes:
     name: nmsvc-database-instance-2-volume
   database-adminer-volume:
     name: nmsvc-database-adminer-volume
-  minio-volume:
-    name: nmsvc-minio-volume
