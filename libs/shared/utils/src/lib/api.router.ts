@@ -13,16 +13,4 @@ export class ApiRouter {
     issueToken: 'token',
     logout: 'logout',
   };
-
-  static files = {
-    title: 'Files',
-    root: 'files',
-    fileId: 'fileId',
-  };
-
-  static uploads = {
-    title: 'Tus file upload',
-    root: 'uploads',
-    rootFullPath: `/${ApiRouter.globalPrefix}/uploads`,
-  };
 }
