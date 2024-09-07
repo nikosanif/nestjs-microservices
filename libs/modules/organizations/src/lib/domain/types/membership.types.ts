@@ -1,9 +1,7 @@
 import { BaseEntityProps } from '@nmsvc/sdk/db';
 
-import { OrganizationProps } from './organization.types';
+import { OrganizationProps, UserMemberProps } from './organization.types';
 import { TeamProps } from './team.types';
-
-export type UserMemberProps = Pick<BaseEntityProps, 'id'>;
 
 export enum OrgMemberRoleEnum {
   OrgAdmin = 'org-admin',

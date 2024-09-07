@@ -5,6 +5,7 @@ export * from './entities/user-org-membership.entity';
 export * from './entities/user-team-membership.entity';
 
 export * from './ports/org-invitation.repository.port';
+export * from './ports/org-user.repository.port';
 export * from './ports/organization.repository.port';
 export * from './ports/team.repository.port';
 export * from './ports/user-org-membership.repository.port';

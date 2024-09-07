@@ -1,7 +1,7 @@
 import { BaseEntityProps } from '@nmsvc/sdk/db';
 
-import { OrgMemberRoleEnum, UserMemberProps } from './membership.types';
-import { OrganizationProps } from './organization.types';
+import { OrgMemberRoleEnum } from './membership.types';
+import { OrganizationProps, UserMemberProps } from './organization.types';
 
 export enum OrgInvitationStatusEnum {
   Pending = 'pending',

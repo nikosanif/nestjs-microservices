@@ -1,11 +1,11 @@
 import { BaseEntityProps } from '@nmsvc/sdk/db';
 
-export type OrgOwnerProps = Pick<BaseEntityProps, 'id'>;
+export type UserMemberProps = Pick<BaseEntityProps, 'id'>;
 
 export interface OrganizationProps extends BaseEntityProps {
   slug: string;
   name: string;
-  ownerUserId: OrgOwnerProps['id'];
+  ownerUserId: UserMemberProps['id'];
   description: string | null;
   location: string | null;
   website: string | null;
