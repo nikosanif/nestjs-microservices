@@ -1,0 +1,78 @@
+{
+  "name": "users-management-gateway",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/users-management-gateway/src",
+  "projectType": "application",
+  "tags": ["type:app"],
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "webpackConfig": "apps/users-management-gateway/webpack.config.js",
+        "outputPath": "dist/apps/users-management-gateway",
+        "main": "apps/users-management-gateway/src/main.ts",
+        "tsConfig": "apps/users-management-gateway/tsconfig.app.json",
+        "assets": [
+          "apps/users-management-gateway/src/assets",
+          "apps/users-management-gateway/src/environments"
+        ],
+        "additionalEntryPoints": [
+          {
+            "entryName": "cli",
+            "entryPath": "apps/users-management-gateway/src/main.cli.ts"
+          }
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "users-management-gateway:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "users-management-gateway:build:development"
+        },
+        "production": {
+          "buildTarget": "users-management-gateway:build:production"
+        }
+      }
+    },
+    "cli": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "build",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "webpackConfig": "apps/users-management-gateway/webpack.config.js",
+        "outputPath": "dist/apps/users-management-gateway-cli",
+        "main": "apps/users-management-gateway/src/main.cli.ts",
+        "tsConfig": "apps/users-management-gateway/tsconfig.app.json",
+        "assets": [
+          "apps/users-management-gateway/src/assets",
+          "apps/users-management-gateway/src/environments"
+        ]
+      },
+      "configurations": {
+        "build": {
+          "optimization": true
+        },
+        "serve": {
+          "optimization": false,
+          "watch": true
+        }
+      }
+    }
+  }
+}

@@ -12,8 +12,8 @@ async function bootstrap() {
 
   const app = await ApplicationFactory.create(AppModule, {
     globalPrefix,
-    title: 'Cyclops API',
-    description: 'Cyclops API description',
+    title: 'Users management gateway API',
+    description: 'An API gateway for users management',
     version: '1.0',
   });
 

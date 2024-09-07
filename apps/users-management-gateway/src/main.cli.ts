@@ -7,7 +7,7 @@ const bootstrap = new BootstrapConsole({
   module: AppModule,
   useDecorators: true,
   contextOptions: {
-    logger: new Logger('Wolverine CLI'),
+    logger: new Logger('Users management gateway CLI'),
   },
 });
 

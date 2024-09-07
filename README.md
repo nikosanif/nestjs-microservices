@@ -61,13 +61,8 @@ By [@nikosanif](https://x.com/nikosanif)
    # Start required services with docker (database, etc.)
    docker compose -f ./docker/docker-compose.yml up -d
 
-   # In one shell, start the cyclops microservice
-   # Users microservice (HTTP + gRPC API)
-   npx nx run cyclops:serve
-
-   # In another shell, start the wolverine microservice
-   # Auth microservice (HTTP API)
-   npx nx run wolverine:serve
+   # In one shell, start the users-management-gateway server
+   npx nx run users-management-gateway:serve
    ```
 
 5. [Optional] Setup projects for development:
@@ -87,17 +82,16 @@ The monorepo is structured as follows:
 ```sh
 .
 ├── apps
-│   ├── cyclops         # Agnostic microservice
-│   └── wolverine       # Agnostic microservice
+│   └── users-management-gateway   # Gateway for users management
 │
 ├── libs
 │   ├── microservices
 │   │   └── grpc        # gRPC services/models
 │   │
 │   ├── modules
-│   │   ├── auth        # Auth module
-│   │   ├── files        # File management module
-│   │   └── users       # User management module
+│   │   ├── auth            # Auth module
+│   │   ├── organizations   # File management module
+│   │   └── users           # User management module
 │   │
 │   ├── sdk
 │   │   ├── api         # API utilities for microservices
