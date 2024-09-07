@@ -10,7 +10,7 @@ import {
   SeedRoleCliController,
   UserGrpcController,
 } from './api';
-import { applicationHandlers, UsersFacade, RolesFacade } from './application';
+import { UsersFacade, RolesFacade } from './application';
 import { UsersConfigModule } from './config';
 import { RoleEntity, UserEntity, UserCredentialsEntity } from './domain';
 import { RoleRepository, UserRepository, UserCredentialsRepository } from './infra';
@@ -29,8 +29,6 @@ const cliControllers: Provider[] = [UserCliController, SeedRoleCliController];
 
 const facades: Provider[] = [UsersFacade, RolesFacade];
 
-const services: Provider[] = [...applicationHandlers];
-
 const repositories: Provider[] = [
   { provide: ROLE_REPOSITORY, useClass: RoleRepository },
   { provide: USER_REPOSITORY, useClass: UserRepository },
@@ -47,6 +45,6 @@ const entities = [RoleEntity, UserEntity, UserCredentialsEntity];
     LoggerModule,
   ],
   controllers: [...httpControllers, ...grpcControllers],
-  providers: [...repositories, ...services, ...facades, ...cliControllers],
+  providers: [...repositories, ...facades, ...cliControllers],
 })
 export class UsersModule {}

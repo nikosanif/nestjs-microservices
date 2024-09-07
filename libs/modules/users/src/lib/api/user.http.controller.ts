@@ -20,9 +20,10 @@ import {
   CreateUserCommand,
   DeleteUserCommand,
   UpdateUserCommand,
+  FindByIdUserQuery,
+  FindUsersQuery,
   UsersFacade,
 } from '../application';
-import { FindByIdUserQuery, FindUsersQuery } from '../application/queries';
 import {
   RootUserIsNotEditableError,
   UserAlreadyExistsError,

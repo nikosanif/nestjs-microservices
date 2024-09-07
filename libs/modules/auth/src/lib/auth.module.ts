@@ -11,12 +11,7 @@ import {
 import { LoggerModule } from '@nmsvc/sdk/common';
 
 import { AuthHttpController, OAuthClientCliController } from './api';
-import {
-  applicationHandlers,
-  OAuthClientsFacade,
-  OAuthFacade,
-  oauthProviders,
-} from './application';
+import { OAuthClientsFacade, OAuthFacade, oauthProviders } from './application';
 import {
   AUTH_DB_CONNECTION_NAME,
   OAUTH_CLIENT_REPOSITORY,
@@ -33,8 +28,6 @@ const httpControllers = [AuthHttpController];
 const cliControllers: Provider[] = [OAuthClientCliController];
 
 const facades: Provider[] = [OAuthClientsFacade, OAuthFacade];
-
-const services: Provider[] = [...applicationHandlers];
 
 const repositories: Provider[] = [
   { provide: OAUTH_CLIENT_REPOSITORY, useClass: OAuthClientRepository },
@@ -64,13 +57,6 @@ const grpcProviders: Provider[] = [
     LoggerModule,
   ],
   controllers: [...httpControllers],
-  providers: [
-    ...repositories,
-    ...services,
-    ...facades,
-    ...cliControllers,
-    ...oauthProviders,
-    ...grpcProviders,
-  ],
+  providers: [...repositories, ...facades, ...cliControllers, ...oauthProviders, ...grpcProviders],
 })
 export class AuthModule {}
