@@ -8,6 +8,7 @@ import {
   UsersGrpcServiceClient,
 } from '@nmsvc/microservices/grpc';
 
+import { OrganizationsFacade } from './application';
 import { OrgsConfigModule } from './config';
 import {
   OrgInvitationEntity,
@@ -34,6 +35,8 @@ import {
   ORG_USER_REPOSITORY,
   USERS_GRPC_SERVICE,
 } from './organizations.di-tokens';
+
+const facades: Provider[] = [OrganizationsFacade];
 
 const repositories: Provider[] = [
   { provide: ORGANIZATION_REPOSITORY, useClass: OrganizationRepository },
@@ -70,6 +73,6 @@ const grpcProviders: Provider[] = [
     ClientsModule.register([...grpcClients]),
   ],
   controllers: [],
-  providers: [...repositories, ...grpcProviders],
+  providers: [...repositories, ...facades, ...grpcProviders],
 })
 export class OrganizationsModule {}

@@ -15,3 +15,5 @@ export * from './types/invitation.types';
 export * from './types/membership.types';
 export * from './types/organization.types';
 export * from './types/team.types';
+
+export * from './organization.errors';
